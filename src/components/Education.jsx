@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/forms.css';
-import '../styles/render.css';
 
 function EducationForm({ onSubmit, initialData }) {
     const [school, setSchool] = useState('');

@@ -1,0 +1,67 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+/* forms */
+
+.forms {
+  width: 280px;
+  background-color: #2F3645;
+  padding: 5px;
+}
+
+.forms > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid #263047;
+}
+
+.forms > h3 {
+  background-color: #1d212b
+}
+
+input[type=text], input[type=email], input[type=tel], input[type=date] {
+  width: 60%;
+  margin-top: 5px;
+  background-color: #939185;
+}
+
+input[type=submit] {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 25%;
+}
+
+/* render */
+
+.render {
+  width: 1000px;
+  height: auto;
+  background-color: #939185;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start
+}
+
+.render > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.render > h3 {
+  background-color: #494840;
+}
+
+.render > h4 {
+  background-color: #888678;
+}

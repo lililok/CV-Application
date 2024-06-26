@@ -1,4 +1,4 @@
-import './styles/App.css'
+import './App.css'
 import React, { useState } from 'react';
 import { GeneralForm, GeneralRender } from "./components/General.jsx";
 import { EducationForm, EducationRender } from "./components/Education.jsx";
@@ -60,8 +60,11 @@ function App() {
       </div>
       <div className="render">
       <h3>Resume</h3>
+      <h4>General</h4>
         <GeneralRender general={general} onEdit={handleGeneralEdit}/>
+      <h4>Education</h4>
         <EducationRender education={education} onEdit={handleEducationEdit}/>
+      <h4>Practice</h4>
         <PracticeRender practice={practice} onEdit={handlePracticeEdit}/>
       </div>
     </>
