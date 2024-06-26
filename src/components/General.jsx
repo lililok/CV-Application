@@ -1,18 +1,24 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-function GeneralForm() {
+function GeneralForm({ onSubmit, initialData }) {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
-    const [general, setGeneral] = useState({});
+
+    useEffect(() => {
+        if (initialData) {
+            setName(initialData.name || '');
+            setEmail(initialData.email || '');
+            setPhone(initialData.phone || '');
+        }
+    }, [initialData]);
 
     const handleGeneralFormSubmit = (event) => {
         event.preventDefault();
-        console.log('Name:', name);
-        console.log('Email:', email);
-        console.log('Phone:', phone);
-        setGeneral({ name, email, phone });
+        onSubmit({ name, email, phone });
+        setName("");
+        setEmail("");
+        setPhone("");
     }
 
     const handleNameChange = (event) => {
@@ -29,7 +35,7 @@ function GeneralForm() {
 
     return (
         <>
-        <h3>General</h3>
+        <h3>{initialData ? 'Edit General' : 'General'}</h3>
         <form className="generalForm" onSubmit={handleGeneralFormSubmit}>
             <label htmlFor="name">Name:</label>
             <input type="text" value={name} onChange={handleNameChange} required />
@@ -43,4 +49,19 @@ function GeneralForm() {
     )
 }
 
-export default GeneralForm;
+function GeneralRender({ general, onEdit }) {
+    return (
+        <>
+        {general && (
+                <div className="generalRender">
+                    <p><strong>Name:</strong> {general.name}</p>
+                    <p><strong>Email:</strong> {general.email}</p>
+                    <p><strong>Phone:</strong> {general.phone}</p>
+                    <button onClick={onEdit}>Edit</button>
+                </div>
+            )}
+        </>
+    )
+}
+
+export {GeneralForm, GeneralRender};
