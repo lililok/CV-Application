@@ -1,4 +1,4 @@
-import './App.css'
+import './styles/App.css'
 import React, { useState } from 'react';
 import { GeneralForm, GeneralRender } from "./components/General.jsx";
 import { EducationForm, EducationRender } from "./components/Education.jsx";
@@ -59,6 +59,7 @@ function App() {
                 )}
       </div>
       <div className="render">
+      <h3>Resume</h3>
         <GeneralRender general={general} onEdit={handleGeneralEdit}/>
         <EducationRender education={education} onEdit={handleEducationEdit}/>
         <PracticeRender practice={practice} onEdit={handlePracticeEdit}/>

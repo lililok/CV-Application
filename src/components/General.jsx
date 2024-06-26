@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import '../styles/forms.css';
+import '../styles/render.css';
 
 function GeneralForm({ onSubmit, initialData }) {
     const [name, setName] = useState('');
